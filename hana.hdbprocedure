@@ -1,0 +1,11 @@
+PROCEDURE "GUNAWF01"."ACCESS_TEST.FD.STORED_PROCEDURES::PR_010_HTS_SQL_TRAINSTATS" ( OUT res table ( VALUE NVARCHAR(40) )) 
+	LANGUAGE SQLSCRIPT
+	SQL SECURITY INVOKER 
+	--DEFAULT SCHEMA <default_schema_name>
+	READS SQL DATA AS
+BEGIN
+/***************************** 
+	Write your procedure logic 
+ *****************************/
+ res = SELECT STATUS AS VALUE FROM "GUNAWF01"."ACCESS_TEST.FD.TABLES::TC_HTS_TRAIN_STATS";
+END;
